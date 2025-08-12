@@ -2160,16 +2160,22 @@
 
       currentBookingData = experience;
       
+      // Reset modal to original state first
+      resetModalToOriginalState();
+      
       // Update modal content
       document.getElementById('modalTitle').textContent = `Book: ${experience.title}`;
-      document.getElementById('experienceSummary').innerHTML = `
-        <h4 style="margin-bottom: 8px;">${experience.title}</h4>
-        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
-          <span>⏱️ ${experience.duration}</span>
-          <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
-        </div>
-        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
-      `;
+      const experienceSummary = document.getElementById('experienceSummary');
+      if (experienceSummary) {
+        experienceSummary.innerHTML = `
+          <h4 style="margin-bottom: 8px;">${experience.title}</h4>
+          <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
+            <span>⏱️ ${experience.duration}</span>
+            <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
+          </div>
+          <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
+        `;
+      }
 
       // Reset form
       resetBookingForm();
@@ -2408,6 +2414,34 @@
         });
       }, 8000);
     }
+
+    // Mobile menu functionality
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.toggle('show');
+    }
+
+    function closeMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenu.classList.remove('show');
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const toggleButton = document.querySelector('.mobile-menu-toggle');
+      
+      if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
+        mobileMenu.classList.remove('show');
+      }
+    });
+
+    // Close mobile menu on window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.getElementById('mobileMenu').classList.remove('show');
+      }
+    });
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
