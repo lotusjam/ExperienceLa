@@ -1690,32 +1690,78 @@
       document.getElementById('dateInput').min = today;
     }
 
-    function openBookingModal(experienceId) {
-      const experience = experiences.find(exp => exp.id === experienceId);
-      if (!experience) return;
+  function openBookingModal(experienceId) {
+  const experience = experiences.find(exp => exp.id === experienceId);
+  if (!experience) {
+    console.error(`Experience with ID ${experienceId} not found`);
+    return;
+  }
 
-      currentBookingData = experience;
-      
-      // Update modal content
-      document.getElementById('modalTitle').textContent = `Book: ${experience.title}`;
-      document.getElementById('experienceSummary').innerHTML = `
-        <h4 style="margin-bottom: 8px;">${experience.title}</h4>
-        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
-          <span>⏱️ ${experience.duration}</span>
-          <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
-        </div>
-        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
-      `;
+  currentBookingData = experience;
 
-      // Reset form
-      resetBookingForm();
-      
-      // Show modal
-      bookingModal.style.display = 'flex';
-      requestAnimationFrame(() => {
-        bookingModal.classList.add('show');
-      });
-    }
+  // Always rebuild the booking form HTML so elements exist
+  const modalBody = document.querySelector('.modal-body');
+  modalBody.innerHTML = `
+    <h2 id="modalTitle"></h2>
+    <div id="experienceSummary"></div>
+
+    <form id="bookingForm">
+      <label>Date:</label>
+      <input type="date" id="dateInput" required />
+
+      <label>People:</label>
+      <select id="peopleSelect">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+
+      <label>Name:</label>
+      <input type="text" id="nameInput" required />
+
+      <label>Phone:</label>
+      <input type="tel" id="phoneInput" required />
+
+      <label>Notes:</label>
+      <textarea id="notesInput"></textarea>
+
+      <div class="payment-options">
+        <div class="payment-option selected" onclick="selectPayment('cash')">Cash</div>
+        <div class="payment-option" onclick="selectPayment('online')">Online</div>
+      </div>
+
+      <button type="button" class="confirm-button" onclick="confirmBooking()">Confirm Booking</button>
+    </form>
+  `;
+
+  // Now get the rebuilt elements
+  const modalTitleEl = document.getElementById('modalTitle');
+  const summaryEl = document.getElementById('experienceSummary');
+
+  modalTitleEl.textContent = `Book: ${experience.title}`;
+  summaryEl.innerHTML = `
+    <h4 style="margin-bottom: 8px;">${experience.title}</h4>
+    <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
+      <span>⏱️ ${experience.duration}</span>
+      <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
+    </div>
+    <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
+  `;
+
+  // Reset payment selection
+  selectedPaymentMethod = 'cash';
+
+  // Show modal
+  if (typeof bookingModal !== "undefined") {
+    bookingModal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      bookingModal.classList.add('show');
+    });
+  } else {
+    console.error("Variable 'bookingModal' not found. Make sure your modal element is assigned.");
+  }
+}
+
 
     function closeModal() {
       bookingModal.classList.remove('show');
