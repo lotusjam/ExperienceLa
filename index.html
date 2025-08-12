@@ -776,24 +776,370 @@
       border-radius: inherit;
     }
 
+    /* Mobile Menu */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-primary);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 99;
+    }
+
+    .mobile-menu.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-links {
+      list-style: none;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .mobile-menu-links a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--surface-dim);
+      transition: var(--transition);
+    }
+
+    .mobile-menu-links a:hover {
+      color: var(--accent);
+    }
+
     /* Responsive Design */
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 20px;
+      }
+
+      .hero-background {
+        margin: 16px;
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .experiences-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+      }
+
+      .about-grid {
+        gap: 60px;
+      }
+    }
+
     @media (max-width: 768px) {
+      /* Header Mobile */
       .nav-links {
         display: none;
       }
 
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .cta-button {
+        display: none;
+      }
+
+      /* Hero Mobile */
       .hero {
-        padding: 60px 0 80px;
+        padding: 40px 0 60px;
+        min-height: 60vh;
+      }
+
+      .hero-background {
+        margin: 12px;
+      }
+
+      .hero-title {
+        font-size: clamp(28px, 8vw, 48px);
+        margin-bottom: 16px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .search-container {
+        max-width: 100%;
+        margin-bottom: 40px;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .search-input {
+        text-align: center;
+      }
+
+      .search-button {
+        padding: 16px;
       }
 
       .stats {
         flex-direction: column;
+        gap: 20px;
+      }
+
+      .stat {
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--border-radius);
+        backdrop-filter: blur(10px);
+      }
+
+      /* Categories Mobile */
+      .categories {
+        padding: 60px 0;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .category-card {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .category-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .category-title {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+
+      .category-desc {
+        font-size: 13px;
+      }
+
+      /* Experiences Mobile */
+      .experiences {
+        padding: 60px 0;
+        margin: 0 12px;
+      }
+
+      .experiences-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .experience-image {
+        height: 200px;
+      }
+
+      .experience-content {
+        padding: 20px;
+      }
+
+      .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .experience-price {
+        text-align: left;
+      }
+
+      /* How It Works Mobile */
+      .how-it-works {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+      }
+
+      .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+        padding: 0 16px;
+      }
+
+      .steps-container {
+        grid-template-columns: 1fr;
         gap: 24px;
       }
 
-      .categories-grid,
-      .experiences-grid {
+      .step-card {
+        padding: 24px 20px;
+      }
+
+      .step-number {
+        font-size: 36px;
+        top: 16px;
+        right: 16px;
+      }
+
+      .step-icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      .step-title {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .step-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .feature-item {
+        font-size: 13px;
+      }
+
+      .process-visualization {
+        display: none;
+      }
+
+      /* About Section Mobile */
+      .about-section {
+        padding: 60px 0;
+      }
+
+      .about-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-intro {
+        font-size: 16px;
+        margin-bottom: 32px;
+      }
+
+      .about-story h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .about-story p {
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      .mission-values {
+        margin-top: 32px;
+        gap: 20px;
+      }
+
+      .mission-item h4 {
+        font-size: 16px;
+        margin-bottom: 6px;
+      }
+
+      .mission-item p {
+        font-size: 14px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .stat-card {
+        padding: 20px 16px;
+      }
+
+      .stat-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .stat-card .stat-number {
+        font-size: 24px;
+      }
+
+      .stat-card .stat-label {
+        font-size: 12px;
+      }
+
+      .testimonial-card {
+        padding: 24px 20px;
+      }
+
+      .testimonial-content p {
+        font-size: 14px;
+      }
+
+      .team-highlight h4 {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      .team-members {
+        gap: 12px;
+      }
+
+      .team-member {
+        padding: 16px 12px;
+      }
+
+      .member-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .member-info strong {
+        font-size: 14px;
+      }
+
+      .member-info span {
+        font-size: 12px;
+      }
+
+      /* Modal Mobile */
+      .modal {
+        margin: 16px;
+        max-height: calc(100vh - 32px);
+      }
+
+      .modal-header,
+      .modal-body {
+        padding: 20px;
+      }
+
+      .modal-title {
+        font-size: 20px;
       }
 
       .form-grid {
@@ -802,51 +1148,131 @@
 
       .payment-options {
         flex-direction: column;
-      }
-
-      .modal {
-        margin: 16px;
-        max-height: calc(100vh - 32px);
-      }
-
-      .modal-body,
-      .modal-header {
-        padding: 20px;
-      }
-
-      /* How It Works Responsive */
-      .steps-container {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .process-visualization {
-        display: none;
-      }
-
-      /* About Section Responsive */
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-      }
-
-      .team-members {
         gap: 12px;
       }
 
-      .team-member {
-        padding: 12px;
+      .payment-option {
+        padding: 16px;
       }
 
-      .member-avatar {
-        width: 40px;
-        height: 40px;
+      .confirm-button {
+        padding: 16px;
         font-size: 16px;
+      }
+
+      /* Footer Mobile */
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      .footer-links {
+        gap: 8px;
+      }
+
+      .footer-bottom {
+        padding-top: 32px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 16px;
+      }
+
+      .hero {
+        padding: 32px 0 48px;
+        min-height: 50vh;
+      }
+
+      .hero-background {
+        margin: 8px;
+      }
+
+      .hero-title {
+        font-size: clamp(24px, 7vw, 36px);
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+      }
+
+      .search-container {
+        padding: 6px;
+        border-radius: var(--border-radius);
+      }
+
+      .search-input {
+        padding: 14px 16px;
+        font-size: 14px;
+      }
+
+      .search-button {
+        padding: 14px 20px;
+        font-size: 14px;
+      }
+
+      .categories {
+        padding: 48px 0;
+      }
+
+      .section-title {
+        font-size: 28px;
+        margin-bottom: 32px;
+      }
+
+      .category-card {
+        padding: 20px;
+      }
+
+      .category-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+      }
+
+      .category-title {
+        font-size: 16px;
+      }
+
+      .experiences {
+        padding: 48px 0;
+        margin: 0 8px;
+      }
+
+      .how-it-works,
+      .about-section {
+        padding: 48px 0;
+      }
+
+      .step-card {
+        padding: 20px 16px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .testimonial-card {
+        padding: 20px 16px;
+      }
+
+      .modal {
+        margin: 8px;
+        max-height: calc(100vh - 16px);
+      }
+
+      .modal-header,
+      .modal-body {
+        padding: 16px;
       }
     }
 
@@ -1196,7 +1622,18 @@
           <li><a href="#about" class="nav-link">About</a></li>
         </ul>
         <a href="#contact" class="cta-button">Contact Us</a>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
       </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-menu-links">
+        <li><a href="#experiences" onclick="closeMobileMenu()">Experiences</a></li>
+        <li><a href="#how-it-works" onclick="closeMobileMenu()">How it Works</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact Us</a></li>
+      </ul>
     </div>
   </header>
 
@@ -1406,7 +1843,34 @@
               </div>
             </div>
 
-         
+            <div class="team-highlight">
+              <h4>Meet Our Team</h4>
+              <div class="team-members">
+                <div class="team-member">
+                  <div class="member-avatar">T</div>
+                  <div class="member-info">
+                    <strong>Tenzin Norbu</strong>
+                    <span>Founder & Cultural Ambassador</span>
+                  </div>
+                </div>
+                
+                <div class="team-member">
+                  <div class="member-avatar">D</div>
+                  <div class="member-info">
+                    <strong>Dolma Choksang</strong>
+                    <span>Community Relations Manager</span>
+                  </div>
+                </div>
+                
+                <div class="team-member">
+                  <div class="member-avatar">S</div>
+                  <div class="member-info">
+                    <strong>Stanzin Dorjay</strong>
+                    <span>Experience Curator</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1529,7 +1993,7 @@
         price: 3500,
         duration: '8 hours',
         category: 'cultural',
-        image: 'https://images.unsplash.com/photo-1631044633850-87e950befd09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG51YnJhJTIwdmFsbGV5fGVufDB8fDB8fHww',
+        image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1400&auto=format&fit=crop',
         description: 'Experience the mystical Nubra Valley with ancient monasteries and unique desert landscapes. Includes Bactrian camel ride and traditional lunch.',
         rating: 4.9,
         reviews: 124
@@ -1540,18 +2004,18 @@
         price: 1200,
         duration: '3 hours',
         category: 'food',
-        image: 'https://images.unsplash.com/photo-1672858502748-fb7dc81ef830?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRpYmV0YW4lMjBmb29kfGVufDB8fDB8fHww',
+        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
         description: 'Learn authentic Ladakhi recipes in a local family home. Cook momos, thukpa, and traditional butter tea with experienced home chefs.',
         rating: 4.8,
         reviews: 89
       },
       {
         id: 'pangong-tso-trek',
-        title: 'Pangong Tso Lake Adventure',
+        title: 'Pangong Tso Lake Trekking Adventure',
         price: 4500,
         duration: '2 days',
         category: 'trekking',
-        image: 'https://images.unsplash.com/photo-1632507527259-def4a137f7b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhbmdvbmclMjB0c298ZW58MHx8MHx8fDA%3D',
+        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1400&auto=format&fit=crop',
         description: 'Multi-day trek to the stunning Pangong Tso lake. Camping under stars, pristine mountain views, and unforgettable sunrise experiences.',
         rating: 4.9,
         reviews: 156
@@ -1562,7 +2026,7 @@
         price: 2800,
         duration: '6 hours',
         category: 'adventure',
-        image: 'https://images.unsplash.com/photo-1559194128-0cfbb39ee73c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8emFuc2thcnxlbnwwfHwwfHx8MA%3D%3D',
+        image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?q=80&w=1400&auto=format&fit=crop',
         description: 'Thrilling white water rafting through dramatic gorges. Professional guides, safety equipment, and riverside lunch included.',
         rating: 4.7,
         reviews: 203
@@ -1573,7 +2037,7 @@
         price: 1800,
         duration: '1 night',
         category: 'homestay',
-        image: 'https://images.unsplash.com/photo-1727843183408-cc9cccf8e7c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFkYWtoJTIwaG9tZXN0YXl8ZW58MHx8MHx8fDA%3D',
+        image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1400&auto=format&fit=crop',
         description: 'Stay with a local Ladakhi family in traditional home. Experience daily life, help with farming, and enjoy home-cooked meals.',
         rating: 4.9,
         reviews: 67
@@ -1584,7 +2048,7 @@
         price: 3200,
         duration: '5 hours',
         category: 'photography',
-        image: 'https://images.unsplash.com/photo-1636802372291-f03f76bf731f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFkYWtoJTIwJTIwbW9uYXN0ZXJ5fGVufDB8fDB8fHww',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop',
         description: 'Capture stunning Himalayan vistas with professional photographer. Learn composition, lighting, and post-processing techniques.',
         rating: 4.8,
         reviews: 45
@@ -1690,78 +2154,32 @@
       document.getElementById('dateInput').min = today;
     }
 
-  function openBookingModal(experienceId) {
-  const experience = experiences.find(exp => exp.id === experienceId);
-  if (!experience) {
-    console.error(`Experience with ID ${experienceId} not found`);
-    return;
-  }
+    function openBookingModal(experienceId) {
+      const experience = experiences.find(exp => exp.id === experienceId);
+      if (!experience) return;
 
-  currentBookingData = experience;
+      currentBookingData = experience;
+      
+      // Update modal content
+      document.getElementById('modalTitle').textContent = `Book: ${experience.title}`;
+      document.getElementById('experienceSummary').innerHTML = `
+        <h4 style="margin-bottom: 8px;">${experience.title}</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
+          <span>⏱️ ${experience.duration}</span>
+          <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
+        </div>
+        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
+      `;
 
-  // Always rebuild the booking form HTML so elements exist
-  const modalBody = document.querySelector('.modal-body');
-  modalBody.innerHTML = `
-    <h2 id="modalTitle"></h2>
-    <div id="experienceSummary"></div>
-
-    <form id="bookingForm">
-      <label>Date:</label>
-      <input type="date" id="dateInput" required />
-
-      <label>People:</label>
-      <select id="peopleSelect">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-
-      <label>Name:</label>
-      <input type="text" id="nameInput" required />
-
-      <label>Phone:</label>
-      <input type="tel" id="phoneInput" required />
-
-      <label>Notes:</label>
-      <textarea id="notesInput"></textarea>
-
-      <div class="payment-options">
-        <div class="payment-option selected" onclick="selectPayment('cash')">Cash</div>
-        <div class="payment-option" onclick="selectPayment('online')">Online</div>
-      </div>
-
-      <button type="button" class="confirm-button" onclick="confirmBooking()">Confirm Booking</button>
-    </form>
-  `;
-
-  // Now get the rebuilt elements
-  const modalTitleEl = document.getElementById('modalTitle');
-  const summaryEl = document.getElementById('experienceSummary');
-
-  modalTitleEl.textContent = `Book: ${experience.title}`;
-  summaryEl.innerHTML = `
-    <h4 style="margin-bottom: 8px;">${experience.title}</h4>
-    <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
-      <span>⏱️ ${experience.duration}</span>
-      <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
-    </div>
-    <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
-  `;
-
-  // Reset payment selection
-  selectedPaymentMethod = 'cash';
-
-  // Show modal
-  if (typeof bookingModal !== "undefined") {
-    bookingModal.style.display = 'flex';
-    requestAnimationFrame(() => {
-      bookingModal.classList.add('show');
-    });
-  } else {
-    console.error("Variable 'bookingModal' not found. Make sure your modal element is assigned.");
-  }
-}
-
+      // Reset form
+      resetBookingForm();
+      
+      // Show modal
+      bookingModal.style.display = 'flex';
+      requestAnimationFrame(() => {
+        bookingModal.classList.add('show');
+      });
+    }
 
     function closeModal() {
       bookingModal.classList.remove('show');
