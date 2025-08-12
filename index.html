@@ -1691,31 +1691,49 @@
     }
 
     function openBookingModal(experienceId) {
-      const experience = experiences.find(exp => exp.id === experienceId);
-      if (!experience) return;
+  const experience = experiences.find(exp => exp.id === experienceId);
+  if (!experience) {
+    console.error(`Experience with ID ${experienceId} not found`);
+    return;
+  }
 
-      currentBookingData = experience;
-      
-      // Update modal content
-      document.getElementById('modalTitle').textContent = `Book: ${experience.title}`;
-      document.getElementById('experienceSummary').innerHTML = `
-        <h4 style="margin-bottom: 8px;">${experience.title}</h4>
-        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
-          <span>⏱️ ${experience.duration}</span>
-          <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
-        </div>
-        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
-      `;
+  currentBookingData = experience;
 
-      // Reset form
-      resetBookingForm();
-      
-      // Show modal
-      bookingModal.style.display = 'flex';
-      requestAnimationFrame(() => {
-        bookingModal.classList.add('show');
-      });
-    }
+  // Get modal elements
+  const modalTitleEl = document.getElementById('modalTitle');
+  const summaryEl = document.getElementById('experienceSummary');
+
+  // Check if they exist in the DOM
+  if (!modalTitleEl || !summaryEl) {
+    console.error("Booking modal elements missing in DOM. Make sure 'modalTitle' and 'experienceSummary' exist in HTML.");
+    return;
+  }
+
+  // Update modal content
+  modalTitleEl.textContent = `Book: ${experience.title}`;
+  summaryEl.innerHTML = `
+    <h4 style="margin-bottom: 8px;">${experience.title}</h4>
+    <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
+      <span>⏱️ ${experience.duration}</span>
+      <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
+    </div>
+    <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
+  `;
+
+  // Reset form
+  resetBookingForm();
+
+  // Show modal
+  if (typeof bookingModal !== "undefined") {
+    bookingModal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      bookingModal.classList.add('show');
+    });
+  } else {
+    console.error("Variable 'bookingModal' not found. Make sure your modal element is assigned.");
+  }
+}
+
 
     function closeModal() {
       bookingModal.classList.remove('show');
