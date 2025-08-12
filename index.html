@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1980,4 +1981,1988 @@
     });
   </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience Ladakh — Discover Like a Local</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0A0A0B;
+      --secondary: #1A1A1D;
+      --accent: #FF6B6B;
+      --accent-secondary: #4ECDC4;
+      --surface: #FFFFFF;
+      --surface-dim: #F8F9FA;
+      --surface-dark: #121214;
+      --text-primary: #0A0A0B;
+      --text-secondary: #6B7280;
+      --text-inverse: #FFFFFF;
+      --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --gradient-accent: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+      --gradient-surface: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+      --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.16);
+      --border-radius: 16px;
+      --border-radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+      --max-width: 1280px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--surface-dim);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      background: rgba(248, 249, 250, 0.8);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+      transform: translateY(-1px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-primary);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .cta-button {
+      background: var(--gradient-accent);
+      color: white;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-button:hover::before {
+      opacity: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 80px;
+      padding: 80px 0 120px;
+      position: relative;
+      overflow: hidden;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: var(--border-radius-lg);
+      margin: 24px;
+    }
+
+    .hero-background::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+      border-radius: inherit;
+    }
+
+    .hero-background::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+      border-radius: inherit;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      color: white;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+    .search-container {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      padding: 8px;
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto 60px;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+      transition: var(--transition);
+    }
+
+    .search-container:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      padding: 16px 20px;
+      font-size: 16px;
+      background: transparent;
+      outline: none;
+    }
+
+    .search-button {
+      background: var(--gradient-accent);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .search-button:hover {
+      transform: scale(1.05);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      animation: fadeInUp 0.8s ease-out 0.6s both;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 900;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Categories */
+    .categories {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .category-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .category-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--border-radius);
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-icon::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    }
+
+    .category-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .category-desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    /* Experiences */
+    .experiences {
+      padding: 80px 0;
+      background: white;
+      margin: 0 24px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 32px;
+    }
+
+    .experience-card {
+      background: var(--surface-dim);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .experience-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .experience-card:hover .experience-image {
+      transform: scale(1.1);
+    }
+
+    .experience-content {
+      padding: 24px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .experience-title {
+      font-size: 18px;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .experience-price {
+      text-align: right;
+    }
+
+    .price-amount {
+      font-size: 20px;
+      font-weight: 800;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .price-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .experience-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .experience-desc {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .book-button {
+      width: 100%;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .book-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .book-button:hover::before {
+      opacity: 1;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 1000;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .modal-backdrop.show {
+      opacity: 1;
+    }
+
+    .modal {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-xl);
+      transform: translateY(40px);
+      transition: var(--transition);
+    }
+
+    .modal-backdrop.show .modal {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      padding: 32px 32px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: var(--transition);
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .close-button:hover {
+      background: var(--surface-dim);
+      color: var(--text-primary);
+    }
+
+    .modal-body {
+      padding: 32px;
+    }
+
+    .experience-summary {
+      background: var(--surface-dim);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      padding: 16px;
+      border: 2px solid #E5E7EB;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      transition: var(--transition);
+      background: white;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .payment-options {
+      display: flex;
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .payment-option {
+      flex: 1;
+      padding: 20px;
+      border: 2px solid #E5E7EB;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .payment-option.selected {
+      border-color: var(--accent);
+      background: rgba(255, 107, 107, 0.05);
+    }
+
+    .confirm-button {
+      width: 100%;
+      background: var(--gradient-accent);
+      color: white;
+      border: none;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 20px;
+    }
+
+    .confirm-button:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--surface-dark);
+      color: var(--text-inverse);
+      padding: 80px 0 40px;
+      margin-top: 80px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-section h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-link:hover {
+      color: white;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 40px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Loading States */
+    .loading {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .loading::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: inherit;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 60px 0 80px;
+      }
+
+      .stats {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .categories-grid,
+      .experiences-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-options {
+        flex-direction: column;
+      }
+
+      .modal {
+        margin: 16px;
+        max-height: calc(100vh - 32px);
+      }
+
+      .modal-body,
+      .modal-header {
+        padding: 20px;
+      }
+
+      /* How It Works Responsive */
+      .steps-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .process-visualization {
+        display: none;
+      }
+
+      /* About Section Responsive */
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .team-members {
+        gap: 12px;
+      }
+
+      .team-member {
+        padding: 12px;
+      }
+
+      .member-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      padding: 100px 0;
+      background: var(--surface-dim);
+      position: relative;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 80px;
+      line-height: 1.6;
+    }
+
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: var(--border-radius-lg);
+      padding: 40px 32px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .step-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .step-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .step-number {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(102, 126, 234, 0.1);
+      line-height: 1;
+    }
+
+    .step-icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .step-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .step-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .step-features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-item {
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .process-visualization {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .process-line {
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%);
+      position: relative;
+    }
+
+    .process-dots {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-between;
+      width: 220px;
+    }
+
+    .process-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--surface-dim);
+      border: 3px solid var(--accent);
+      transition: var(--transition);
+    }
+
+    .process-dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-intro {
+      font-size: 20px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .about-story h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .about-story p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .mission-values {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mission-item h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .mission-item p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .about-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-card {
+      background: var(--surface-dim);
+      border-radius: var(--border-radius);
+      padding: 24px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .stat-card .stat-number {
+      font-size: 28px;
+      font-weight: 900;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat-card .stat-label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .testimonial-card {
+      background: var(--gradient-primary);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 120px;
+      color: rgba(255, 255, 255, 0.1);
+      content: '"';
+      line-height: 1;
+    }
+
+    .testimonial-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-author span {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .team-highlight h4 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+
+    .team-members {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: var(--surface-dim);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    .team-member:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .member-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gradient-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .member-info strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .member-info span {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">L</div>
+        <span>Experience Ladakh</span>
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#experiences" class="nav-link">Experiences</a></li>
+          <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+        <a href="#contact" class="cta-button">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Discover Ladakh Like Never Before</h1>
+          <p class="hero-subtitle">Immerse yourself in authentic experiences with local hosts. From mountain treks to monastery visits, create memories that last a lifetime.</p>
+          
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search experiences, places, or activities..." id="heroSearch">
+            <button class="search-button" onclick="scrollToExperiences()">Explore</button>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Experiences</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Local Hosts</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">5000+</span>
+              <span class="stat-label">Happy Travelers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+      <div class="container">
+        <h2 class="section-title">Explore by Category</h2>
+        <div class="categories-grid">
+          <div class="category-card" onclick="filterExperiences('trekking')">
+            <div class="category-icon">🏔️</div>
+            <h3 class="category-title">Mountain Trekking</h3>
+            <p class="category-desc">Guided treks through breathtaking Himalayan landscapes</p>
+          </div>
+          <div class="category-card" onclick="filterExperiences('cultural')">
+            <div class="category-icon">🏛️</div>
+            <h3 class="category-title">Cultural Tours</h3>
+            <p class="category-desc">Ancient monasteries and traditional Ladakhi villages</p>
+          </div>
+          <div class="category-card" onclick="filterExperiences('homestay')">
+            <div class="category-icon">🏡</div>
+            <h3 class="category-title">Homestays</h3>
+            <p class="category-desc">Live with local families and experience authentic culture</p>
+          </div>
+          <div class="category-card" onclick="filterExperiences('adventure')">
+            <div class="category-icon">🚵</div>
+            <h3 class="category-title">Adventure Sports</h3>
+            <p class="category-desc">Rafting, mountain biking, and extreme sports</p>
+          </div>
+          <div class="category-card" onclick="filterExperiences('food')">
+            <div class="category-icon">🍜</div>
+            <h3 class="category-title">Culinary Journey</h3>
+            <p class="category-desc">Traditional cooking classes and food tours</p>
+          </div>
+          <div class="category-card" onclick="filterExperiences('photography')">
+            <div class="category-icon">📸</div>
+            <h3 class="category-title">Photography Tours</h3>
+            <p class="category-desc">Capture stunning landscapes with expert guides</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiences -->
+    <section class="experiences" id="experiences">
+      <div class="container">
+        <h2 class="section-title">Featured Experiences</h2>
+        <div class="experiences-grid" id="experiencesGrid">
+          <!-- Experiences will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Your journey to authentic Ladakhi experiences in three simple steps</p>
+        
+        <div class="steps-container">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-icon">🔍</div>
+            <h3 class="step-title">Discover & Choose</h3>
+            <p class="step-description">Browse our curated collection of authentic experiences hosted by verified local guides and families. Each experience is carefully selected to showcase the real Ladakh.</p>
+            <div class="step-features">
+              <div class="feature-item">✓ Verified local hosts</div>
+              <div class="feature-item">✓ Authentic experiences</div>
+              <div class="feature-item">✓ Transparent pricing</div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-icon">📅</div>
+            <h3 class="step-title">Book & Customize</h3>
+            <p class="step-description">Select your preferred dates, group size, and any special requirements. Our flexible booking system allows you to pay at the meeting point or secure your spot online.</p>
+            <div class="step-features">
+              <div class="feature-item">✓ Flexible payment options</div>
+              <div class="feature-item">✓ Instant confirmation</div>
+              <div class="feature-item">✓ Custom requests welcome</div>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-icon">🏔️</div>
+            <h3 class="step-title">Experience & Enjoy</h3>
+            <p class="step-description">Meet your local host and immerse yourself in authentic Ladakhi culture. From cooking traditional meals to trekking ancient paths, create memories that last a lifetime.</p>
+            <div class="step-features">
+              <div class="feature-item">✓ Personal local guides</div>
+              <div class="feature-item">✓ Small group sizes</div>
+              <div class="feature-item">✓ 24/7 support</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-visualization">
+          <div class="process-line"></div>
+          <div class="process-dots">
+            <div class="process-dot active"></div>
+            <div class="process-dot"></div>
+            <div class="process-dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 32px;">About Experience Ladakh</h2>
+            <p class="about-intro">We are passionate storytellers and culture enthusiasts dedicated to connecting travelers with the authentic soul of Ladakh through meaningful local experiences.</p>
+            
+            <div class="about-story">
+              <h3>Our Story</h3>
+              <p>Founded in 2020 by a group of Ladakhi locals and travel enthusiasts, Experience Ladakh was born from a simple belief: that the most meaningful travel experiences happen when you connect with local communities.</p>
+              
+              <p>We recognized that traditional tourism often creates barriers between visitors and the rich cultural heritage of our homeland. That's why we created a platform that empowers local families, guides, and artisans to share their stories, traditions, and daily life directly with travelers.</p>
+            </div>
+
+            <div class="mission-values">
+              <div class="mission-item">
+                <h4>🌱 Sustainable Tourism</h4>
+                <p>We ensure that tourism benefits local communities directly, preserving traditional ways of life while creating economic opportunities.</p>
+              </div>
+              
+              <div class="mission-item">
+                <h4>🤝 Cultural Exchange</h4>
+                <p>We facilitate genuine connections between travelers and locals, fostering mutual understanding and respect.</p>
+              </div>
+              
+              <div class="mission-item">
+                <h4>🏔️ Environmental Responsibility</h4>
+                <p>We promote responsible travel practices that protect Ladakh's pristine landscapes and fragile ecosystem.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Local Hosts</div>
+              </div>
+              
+              <div class="stat-card">
+                <div class="stat-icon">🌟</div>
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Happy Travelers</div>
+              </div>
+              
+              <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Experiences</div>
+              </div>
+              
+              <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Average Rating</div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <p>"Experience Ladakh showed us the real heart of this incredible region. Living with a local family and learning their traditions was transformative."</p>
+                <div class="testimonial-author">
+                  <strong>Sarah & Mike Johnson</strong>
+                  <span>Travelers from Australia</span>
+                </div>
+              </div>
+            </div>
+
+         
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Experience Ladakh</h3>
+          <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">Discover the authentic beauty of Ladakh through carefully curated local experiences.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#experiences" class="footer-link">Experiences</a></li>
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Contact</a></li>
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li><a href="tel:+919876543210" class="footer-link">+91 98765 43210</a></li>
+            <li><a href="mailto:hello@experienceladakh.com" class="footer-link">hello@experienceladakh.com</a></li>
+            <li><span style="color: rgba(255, 255, 255, 0.7);">Leh, Ladakh, India</span></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Instagram</a></li>
+            <li><a href="#" class="footer-link">Facebook</a></li>
+            <li><a href="#" class="footer-link">Twitter</a></li>
+            <li><a href="#" class="footer-link">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Experience Ladakh. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Book Experience</h3>
+        <button class="close-button" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="experience-summary" id="experienceSummary">
+          <!-- Experience details will be populated here -->
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" id="dateInput">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Number of People</label>
+            <select class="form-select" id="peopleSelect">
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6 People</option>
+              <option value="7">7 People</option>
+              <option value="8">8 People</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" id="nameInput" placeholder="Enter your full name">
+          </div>
+          <div class="form-field">
+            <label class="form-label">WhatsApp Number</label>
+            <input type="tel" class="form-input" id="phoneInput" placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Special Requests</label>
+          <textarea class="form-textarea" id="notesInput" placeholder="Any dietary requirements, pickup preferences, or special requests..."></textarea>
+        </div>
+
+        <div class="payment-options">
+          <div class="payment-option selected" onclick="selectPayment('cash')">
+            <strong>💰 Pay at Meeting</strong>
+            <p style="margin: 8px 0 0; font-size: 14px; color: var(--text-secondary);">Cash payment on the day</p>
+          </div>
+          <div class="payment-option" onclick="selectPayment('online')">
+            <strong>💳 Pay Online</strong>
+            <p style="margin: 8px 0 0; font-size: 14px; color: var(--text-secondary);">Secure online payment</p>
+          </div>
+        </div>
+
+        <button class="confirm-button" onclick="confirmBooking()">
+          Confirm Booking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Experience data
+    const experiences = [
+      {
+        id: 'nubra-valley-tour',
+        title: 'Nubra Valley Monastery & Desert Safari',
+        price: 3500,
+        duration: '8 hours',
+        category: 'cultural',
+        image: 'https://images.unsplash.com/photo-1631044633850-87e950befd09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG51YnJhJTIwdmFsbGV5fGVufDB8fDB8fHww',
+        description: 'Experience the mystical Nubra Valley with ancient monasteries and unique desert landscapes. Includes Bactrian camel ride and traditional lunch.',
+        rating: 4.9,
+        reviews: 124
+      },
+      {
+        id: 'ladakhi-cooking-class',
+        title: 'Traditional Ladakhi Cooking Masterclass',
+        price: 1200,
+        duration: '3 hours',
+        category: 'food',
+        image: 'https://images.unsplash.com/photo-1672858502748-fb7dc81ef830?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRpYmV0YW4lMjBmb29kfGVufDB8fDB8fHww',
+        description: 'Learn authentic Ladakhi recipes in a local family home. Cook momos, thukpa, and traditional butter tea with experienced home chefs.',
+        rating: 4.8,
+        reviews: 89
+      },
+      {
+        id: 'pangong-tso-trek',
+        title: 'Pangong Tso Lake Adventure',
+        price: 4500,
+        duration: '2 days',
+        category: 'trekking',
+        image: 'https://images.unsplash.com/photo-1632507527259-def4a137f7b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhbmdvbmclMjB0c298ZW58MHx8MHx8fDA%3D',
+        description: 'Multi-day trek to the stunning Pangong Tso lake. Camping under stars, pristine mountain views, and unforgettable sunrise experiences.',
+        rating: 4.9,
+        reviews: 156
+      },
+      {
+        id: 'zanskar-river-rafting',
+        title: 'Zanskar River White Water Rafting',
+        price: 2800,
+        duration: '6 hours',
+        category: 'adventure',
+        image: 'https://images.unsplash.com/photo-1559194128-0cfbb39ee73c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8emFuc2thcnxlbnwwfHwwfHx8MA%3D%3D',
+        description: 'Thrilling white water rafting through dramatic gorges. Professional guides, safety equipment, and riverside lunch included.',
+        rating: 4.7,
+        reviews: 203
+      },
+      {
+        id: 'hemis-homestay',
+        title: 'Authentic Village Homestay Experience',
+        price: 1800,
+        duration: '1 night',
+        category: 'homestay',
+        image: 'https://images.unsplash.com/photo-1727843183408-cc9cccf8e7c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFkYWtoJTIwaG9tZXN0YXl8ZW58MHx8MHx8fDA%3D',
+        description: 'Stay with a local Ladakhi family in traditional home. Experience daily life, help with farming, and enjoy home-cooked meals.',
+        rating: 4.9,
+        reviews: 67
+      },
+      {
+        id: 'landscape-photography',
+        title: 'Himalayan Landscape Photography Workshop',
+        price: 3200,
+        duration: '5 hours',
+        category: 'photography',
+        image: 'https://images.unsplash.com/photo-1636802372291-f03f76bf731f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFkYWtoJTIwJTIwbW9uYXN0ZXJ5fGVufDB8fDB8fHww',
+        description: 'Capture stunning Himalayan vistas with professional photographer. Learn composition, lighting, and post-processing techniques.',
+        rating: 4.8,
+        reviews: 45
+      }
+    ];
+
+    let currentExperiences = [...experiences];
+    let selectedPaymentMethod = 'cash';
+    let currentBookingData = null;
+
+    // DOM Elements
+    const experiencesGrid = document.getElementById('experiencesGrid');
+    const heroSearch = document.getElementById('heroSearch');
+    const bookingModal = document.getElementById('bookingModal');
+
+    // Initialize the app
+    document.addEventListener('DOMContentLoaded', function() {
+      renderExperiences(currentExperiences);
+      setupSearch();
+      setupModal();
+      setupScrollEffects();
+    });
+
+    // Render experiences
+    function renderExperiences(experiencesList) {
+      experiencesGrid.innerHTML = '';
+      
+      experiencesList.forEach((experience, index) => {
+        const card = document.createElement('div');
+        card.className = 'experience-card';
+        card.style.animationDelay = `${index * 0.1}s`;
+        
+        card.innerHTML = `
+          <img src="${experience.image}" alt="${experience.title}" class="experience-image">
+          <div class="experience-content">
+            <div class="experience-header">
+              <h3 class="experience-title">${experience.title}</h3>
+              <div class="experience-price">
+                <div class="price-amount">₹${experience.price.toLocaleString()}</div>
+                <div class="price-label">per person</div>
+              </div>
+            </div>
+            <div class="experience-meta">
+              <span>⏱️ ${experience.duration}</span>
+              <span>⭐ ${experience.rating} (${experience.reviews})</span>
+            </div>
+            <p class="experience-desc">${experience.description}</p>
+            <button class="book-button" onclick="openBookingModal('${experience.id}')">
+              Book Now
+            </button>
+          </div>
+        `;
+        
+        experiencesGrid.appendChild(card);
+      });
+    }
+
+    // Search functionality
+    function setupSearch() {
+      heroSearch.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        
+        if (query === '') {
+          currentExperiences = [...experiences];
+        } else {
+          currentExperiences = experiences.filter(exp => 
+            exp.title.toLowerCase().includes(query) ||
+            exp.description.toLowerCase().includes(query) ||
+            exp.category.toLowerCase().includes(query)
+          );
+        }
+        
+        renderExperiences(currentExperiences);
+      });
+    }
+
+    // Filter experiences by category
+    function filterExperiences(category) {
+      currentExperiences = experiences.filter(exp => exp.category === category);
+      renderExperiences(currentExperiences);
+      scrollToExperiences();
+    }
+
+    // Scroll to experiences section
+    function scrollToExperiences() {
+      document.getElementById('experiences').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+
+    // Modal functionality
+    function setupModal() {
+      // Close modal when clicking backdrop
+      bookingModal.addEventListener('click', function(e) {
+        if (e.target === bookingModal) {
+          closeModal();
+        }
+      });
+
+      // Set minimum date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('dateInput').min = today;
+    }
+
+    function openBookingModal(experienceId) {
+      const experience = experiences.find(exp => exp.id === experienceId);
+      if (!experience) return;
+
+      currentBookingData = experience;
+      
+      // Update modal content
+      document.getElementById('modalTitle').textContent = `Book: ${experience.title}`;
+      document.getElementById('experienceSummary').innerHTML = `
+        <h4 style="margin-bottom: 8px;">${experience.title}</h4>
+        <div style="display: flex; justify-content: space-between; align-items: center; color: var(--text-secondary);">
+          <span>⏱️ ${experience.duration}</span>
+          <span style="font-weight: 700; color: var(--text-primary);">₹${experience.price.toLocaleString()} per person</span>
+        </div>
+        <p style="margin-top: 12px; color: var(--text-secondary); font-size: 14px;">${experience.description}</p>
+      `;
+
+      // Reset form
+      resetBookingForm();
+      
+      // Show modal
+      bookingModal.style.display = 'flex';
+      requestAnimationFrame(() => {
+        bookingModal.classList.add('show');
+      });
+    }
+
+    function closeModal() {
+      bookingModal.classList.remove('show');
+      setTimeout(() => {
+        bookingModal.style.display = 'none';
+        currentBookingData = null;
+      }, 300);
+    }
+
+    function resetBookingForm() {
+      document.getElementById('dateInput').value = '';
+      document.getElementById('peopleSelect').value = '1';
+      document.getElementById('nameInput').value = '';
+      document.getElementById('phoneInput').value = '';
+      document.getElementById('notesInput').value = '';
+      selectPayment('cash');
+    }
+
+    function selectPayment(method) {
+      selectedPaymentMethod = method;
+      
+      // Update UI
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      if (method === 'cash') {
+        document.querySelector('.payment-option:first-child').classList.add('selected');
+      } else {
+        document.querySelector('.payment-option:last-child').classList.add('selected');
+      }
+    }
+
+    async function confirmBooking() {
+  const date = document.getElementById('dateInput').value;
+  const people = document.getElementById('peopleSelect').value;
+  const name = document.getElementById('nameInput').value.trim();
+  const phone = document.getElementById('phoneInput').value.trim();
+
+  if (!date || !name || !phone) {
+    showNotification('Please fill in all required fields', 'error');
+    return;
+  }
+  if (!currentBookingData) {
+    showNotification('Error: Experience data not found', 'error');
+    return;
+  }
+
+  const booking = {
+    experience_id: currentBookingData.id,
+    experience_title: currentBookingData.title,
+    date: date,
+    people: parseInt(people),
+    name: name,
+    phone: phone,
+    notes: document.getElementById('notesInput').value.trim(),
+    payment_method: selectedPaymentMethod,
+    total_amount: currentBookingData.price * parseInt(people),
+  };
+
+  const confirmButton = document.querySelector('.confirm-button');
+  confirmButton.textContent = 'Processing...';
+  confirmButton.disabled = true;
+
+  const res = await fetch('/.netlify/functions/createBooking', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(booking)
+  });
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    showNotification(result.error || 'Error saving booking', 'error');
+    confirmButton.textContent = 'Confirm Booking';
+    confirmButton.disabled = false;
+    return;
+  }
+
+  showBookingConfirmation({ ...booking, id: result.booking.id });
+}
+
+
+    function showBookingConfirmation(booking) {
+      const modalBody = document.querySelector('.modal-body');
+      modalBody.innerHTML = `
+        <div style="text-align: center; padding: 40px 20px;">
+          <div style="font-size: 64px; margin-bottom: 20px;">✅</div>
+          <h3 style="margin-bottom: 16px; color: var(--accent);">Booking Confirmed!</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 32px;">Your experience has been successfully booked.</p>
+          
+          <div style="background: var(--surface-dim); border-radius: var(--border-radius); padding: 24px; text-align: left; margin-bottom: 32px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <strong>Booking ID:</strong>
+              <span style="font-family: monospace; background: white; padding: 4px 8px; border-radius: 4px;">${booking.id}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <strong>Experience:</strong>
+              <span>${booking.experienceTitle}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <strong>Date:</strong>
+              <span>${new Date(booking.date).toLocaleDateString()}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <strong>People:</strong>
+              <span>${booking.people}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <strong>Total Amount:</strong>
+              <span style="font-weight: 700;">₹${booking.totalAmount.toLocaleString()}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <strong>Payment:</strong>
+              <span>${booking.paymentMethod === 'cash' ? 'Pay at meeting' : 'Online payment'}</span>
+            </div>
+          </div>
+          
+          <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">
+            📱 A confirmation message will be sent to your WhatsApp: <strong>${booking.phone}</strong>
+          </p>
+          
+          <button class="confirm-button" onclick="closeModal()" style="background: var(--gradient-primary);">
+            Close
+          </button>
+        </div>
+      `;
+    }
+
+    function generateBookingId() {
+      const timestamp = Date.now().toString().slice(-6);
+      const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+      return `EXL-${new Date().getFullYear()}-${timestamp}${random}`;
+    }
+
+    function showNotification(message, type = 'info') {
+      // Create notification element
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 24px;
+        background: ${type === 'error' ? '#ff4757' : '#2ed573'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: var(--shadow-lg);
+        z-index: 10000;
+        font-weight: 600;
+        transform: translateX(400px);
+        transition: var(--transition);
+      `;
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      // Animate in
+      requestAnimationFrame(() => {
+        notification.style.transform = 'translateX(0)';
+      });
+      
+      // Remove after 3 seconds
+      setTimeout(() => {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+
+    // Scroll effects
+    function setupScrollEffects() {
+      const header = document.querySelector('header');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(248, 249, 250, 0.95)';
+          header.style.boxShadow = 'var(--shadow-md)';
+        } else {
+          header.style.background = 'rgba(248, 249, 250, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe category cards and other elements
+      document.querySelectorAll('.category-card, .step-card, .stat-card, .team-member').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'var(--transition)';
+        observer.observe(card);
+      });
+
+      // Animate process dots
+      const processDots = document.querySelectorAll('.process-dot');
+      processDots.forEach((dot, index) => {
+        setTimeout(() => {
+          dot.classList.add('active');
+          setTimeout(() => {
+            dot.classList.remove('active');
+          }, 1000);
+        }, index * 1500);
+      });
+
+      // Repeat process dot animation
+      setInterval(() => {
+        processDots.forEach((dot, index) => {
+          setTimeout(() => {
+            dot.classList.add('active');
+            setTimeout(() => {
+              dot.classList.remove('active');
+            }, 1000);
+          }, index * 1500);
+        });
+      }, 8000);
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add some dynamic interactions
+    document.querySelectorAll('.experience-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-12px) scale(1.02)';
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Keyboard navigation for modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && bookingModal.classList.contains('show')) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+>>>>>>> d8e567d57fe98c79d66e42ce174e840eb64f3063
 </html>
