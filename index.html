@@ -1993,7 +1993,7 @@
         price: 3500,
         duration: '8 hours',
         category: 'cultural',
-        image: 'https://images.unsplash.com/photo-1631044633850-87e950befd09?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG51YnJhJTIwdmFsbGV5fGVufDB8fDB8fHww',
+        image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1400&auto=format&fit=crop',
         description: 'Experience the mystical Nubra Valley with ancient monasteries and unique desert landscapes. Includes Bactrian camel ride and traditional lunch.',
         rating: 4.9,
         reviews: 124
@@ -2004,18 +2004,18 @@
         price: 1200,
         duration: '3 hours',
         category: 'food',
-        image: 'https://images.unsplash.com/photo-1672858502748-fb7dc81ef830?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRpYmV0YW4lMjBmb29kfGVufDB8fDB8fHww',
+        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1400&auto=format&fit=crop',
         description: 'Learn authentic Ladakhi recipes in a local family home. Cook momos, thukpa, and traditional butter tea with experienced home chefs.',
         rating: 4.8,
         reviews: 89
       },
       {
         id: 'pangong-tso-trek',
-        title: 'Pangong Tso Lake Adventure',
+        title: 'Pangong Tso Lake Trekking Adventure',
         price: 4500,
         duration: '2 days',
         category: 'trekking',
-        image: 'https://images.unsplash.com/photo-1632507527259-def4a137f7b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhbmdvbmclMjB0c298ZW58MHx8MHx8fDA%3D',
+        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1400&auto=format&fit=crop',
         description: 'Multi-day trek to the stunning Pangong Tso lake. Camping under stars, pristine mountain views, and unforgettable sunrise experiences.',
         rating: 4.9,
         reviews: 156
@@ -2026,7 +2026,7 @@
         price: 2800,
         duration: '6 hours',
         category: 'adventure',
-        image: 'https://images.unsplash.com/photo-1559194128-0cfbb39ee73c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8emFuc2thcnxlbnwwfHwwfHx8MA%3D%3D',
+        image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?q=80&w=1400&auto=format&fit=crop',
         description: 'Thrilling white water rafting through dramatic gorges. Professional guides, safety equipment, and riverside lunch included.',
         rating: 4.7,
         reviews: 203
@@ -2037,7 +2037,7 @@
         price: 1800,
         duration: '1 night',
         category: 'homestay',
-        image: 'https://images.unsplash.com/photo-1727843183408-cc9cccf8e7c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFkYWtoJTIwaG9tZXN0YXl8ZW58MHx8MHx8fDA%3D',
+        image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1400&auto=format&fit=crop',
         description: 'Stay with a local Ladakhi family in traditional home. Experience daily life, help with farming, and enjoy home-cooked meals.',
         rating: 4.9,
         reviews: 67
@@ -2048,7 +2048,7 @@
         price: 3200,
         duration: '5 hours',
         category: 'photography',
-        image: 'https://images.unsplash.com/photo-1636802372291-f03f76bf731f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFkYWtoJTIwJTIwbW9uYXN0ZXJ5fGVufDB8fDB8fHww',
+        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1400&auto=format&fit=crop',
         description: 'Capture stunning Himalayan vistas with professional photographer. Learn composition, lighting, and post-processing techniques.',
         rating: 4.8,
         reviews: 45
@@ -2192,15 +2192,91 @@
       setTimeout(() => {
         bookingModal.style.display = 'none';
         currentBookingData = null;
+        // Reset modal to original state when closing
+        resetModalToOriginalState();
       }, 300);
     }
 
+    function resetModalToOriginalState() {
+      const modalBody = document.querySelector('.modal-body');
+      modalBody.innerHTML = `
+        <div class="experience-summary" id="experienceSummary">
+          <!-- Experience details will be populated here -->
+        </div>
+        
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-input" id="dateInput">
+          </div>
+          <div class="form-field">
+            <label class="form-label">Number of People</label>
+            <select class="form-select" id="peopleSelect">
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6 People</option>
+              <option value="7">7 People</option>
+              <option value="8">8 People</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" id="nameInput" placeholder="Enter your full name">
+          </div>
+          <div class="form-field">
+            <label class="form-label">WhatsApp Number</label>
+            <input type="tel" class="form-input" id="phoneInput" placeholder="+91 98765 43210">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Special Requests</label>
+          <textarea class="form-textarea" id="notesInput" placeholder="Any dietary requirements, pickup preferences, or special requests..."></textarea>
+        </div>
+
+        <div class="payment-options">
+          <div class="payment-option selected" onclick="selectPayment('cash')">
+            <strong>💰 Pay at Meeting</strong>
+            <p style="margin: 8px 0 0; font-size: 14px; color: var(--text-secondary);">Cash payment on the day</p>
+          </div>
+          <div class="payment-option" onclick="selectPayment('online')">
+            <strong>💳 Pay Online</strong>
+            <p style="margin: 8px 0 0; font-size: 14px; color: var(--text-secondary);">Secure online payment</p>
+          </div>
+        </div>
+
+        <button class="confirm-button" onclick="confirmBooking()">
+          Confirm Booking
+        </button>
+      `;
+
+      // Set minimum date to today
+      const today = new Date().toISOString().split('T')[0];
+      const dateInput = document.getElementById('dateInput');
+      if (dateInput) {
+        dateInput.min = today;
+      }
+    }
+
     function resetBookingForm() {
-      document.getElementById('dateInput').value = '';
-      document.getElementById('peopleSelect').value = '1';
-      document.getElementById('nameInput').value = '';
-      document.getElementById('phoneInput').value = '';
-      document.getElementById('notesInput').value = '';
+      const dateInput = document.getElementById('dateInput');
+      const peopleSelect = document.getElementById('peopleSelect');
+      const nameInput = document.getElementById('nameInput');
+      const phoneInput = document.getElementById('phoneInput');
+      const notesInput = document.getElementById('notesInput');
+
+      if (dateInput) dateInput.value = '';
+      if (peopleSelect) peopleSelect.value = '1';
+      if (nameInput) nameInput.value = '';
+      if (phoneInput) phoneInput.value = '';
+      if (notesInput) notesInput.value = '';
+      
       selectPayment('cash');
     }
 
@@ -2221,10 +2297,10 @@
 
     function confirmBooking() {
       // Validate form
-      const date = document.getElementById('dateInput').value;
-      const people = document.getElementById('peopleSelect').value;
-      const name = document.getElementById('nameInput').value.trim();
-      const phone = document.getElementById('phoneInput').value.trim();
+      const date = document.getElementById('dateInput')?.value;
+      const people = document.getElementById('peopleSelect')?.value;
+      const name = document.getElementById('nameInput')?.value?.trim();
+      const phone = document.getElementById('phoneInput')?.value?.trim();
 
       if (!date || !name || !phone) {
         showNotification('Please fill in all required fields', 'error');
@@ -2249,7 +2325,7 @@
         people: people,
         name: name,
         phone: phone,
-        notes: document.getElementById('notesInput').value.trim(),
+        notes: document.getElementById('notesInput')?.value?.trim() || '',
         paymentMethod: selectedPaymentMethod,
         totalAmount: totalAmount,
         status: 'confirmed',
@@ -2258,8 +2334,10 @@
 
       // Simulate booking process
       const confirmButton = document.querySelector('.confirm-button');
-      confirmButton.textContent = 'Processing...';
-      confirmButton.disabled = true;
+      if (confirmButton) {
+        confirmButton.textContent = 'Processing...';
+        confirmButton.disabled = true;
+      }
 
       setTimeout(() => {
         showBookingConfirmation(booking);
